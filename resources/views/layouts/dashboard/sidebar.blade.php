@@ -14,10 +14,10 @@
 
       <!-- 1. Pendataan -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*') ? '' : 'collapsed' }}" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*', 'alumni.*') ? '' : 'collapsed' }}" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-people"></i><span>Pendataan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="pendataan-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
+        <ul id="pendataan-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*', 'alumni.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
             <a href="{{ route('mahasiswa-baru.index') }}" class="{{ request()->routeIs('mahasiswa-baru.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Mahasiswa Baru (MABA)</span>
@@ -44,7 +44,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('alumni.index') }}" class="{{ request()->routeIs('alumni.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Data Alumni</span>
             </a>
           </li>

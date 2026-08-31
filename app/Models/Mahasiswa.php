@@ -77,4 +77,12 @@ class Mahasiswa extends Model
     {
         return $this->hasMany(KebutuhanInklusif::class, 'mahasiswa_id');
     }
+
+    /**
+     * Relasi ke Data Alumni.
+     */
+    public function alumni(): HasOne
+    {
+        return $this->hasOne(Alumni::class, 'mahasiswa_id');
+    }
 }
