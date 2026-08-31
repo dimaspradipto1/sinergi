@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Mahasiswa extends Model
 {
@@ -50,5 +51,13 @@ class Mahasiswa extends Model
     public function tahunAkademik(): BelongsTo
     {
         return $this->belongsTo(TahunAkademik::class, 'tahun_akademik_id');
+    }
+
+    /**
+     * Relasi ke Orang Tua / Wali.
+     */
+    public function orangTua(): HasOne
+    {
+        return $this->hasOne(OrangTua::class, 'mahasiswa_id');
     }
 }
