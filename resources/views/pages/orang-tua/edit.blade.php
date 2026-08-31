@@ -33,7 +33,7 @@
                         <div class="row mb-4">
                             <div class="col-md-12">
                                 <label for="mahasiswa_id" class="form-label fw-semibold">Mahasiswa <span class="text-danger">*</span></label>
-                                <select name="mahasiswa_id" id="mahasiswa_id" class="form-select @error('mahasiswa_id') is-invalid @enderror" required>
+                                <select name="mahasiswa_id" id="mahasiswa_id" class="form-select select2 @error('mahasiswa_id') is-invalid @enderror" data-placeholder="-- Cari NIM atau Nama Mahasiswa --" required>
                                     @foreach($mahasiswa as $mhs)
                                         <option value="{{ $mhs->id }}" {{ old('mahasiswa_id', $orangTua->mahasiswa_id) == $mhs->id ? 'selected' : '' }}>
                                             {{ $mhs->nim }} - {{ $mhs->nama }} ({{ $mhs->programStudi->program_studi ?? '-' }})

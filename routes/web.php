@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DokumenMahasiswaController;
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\KebutuhanInklusifController;
 use App\Http\Controllers\MahasiswaBaruController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\OrangTuaController;
@@ -35,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('mahasiswa-baru', MahasiswaBaruController::class);
     Route::resource('mahasiswa', MahasiswaController::class);
     Route::resource('orang-tua', OrangTuaController::class);
+    Route::resource('dokumen-mahasiswa', DokumenMahasiswaController::class);
+    Route::resource('kebutuhan-inklusif', KebutuhanInklusifController::class);
 
     // Master Data
     Route::put('/pengguna/{pengguna}/password', [PenggunaController::class, 'updatePassword'])->name('pengguna.password.update');

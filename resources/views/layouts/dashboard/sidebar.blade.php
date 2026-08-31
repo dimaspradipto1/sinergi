@@ -14,10 +14,10 @@
 
       <!-- 1. Pendataan -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*') ? '' : 'collapsed' }}" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*') ? '' : 'collapsed' }}" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-people"></i><span>Pendataan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="pendataan-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
+        <ul id="pendataan-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*', 'orang-tua.*', 'dokumen-mahasiswa.*', 'kebutuhan-inklusif.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
             <a href="{{ route('mahasiswa-baru.index') }}" class="{{ request()->routeIs('mahasiswa-baru.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Mahasiswa Baru (MABA)</span>
@@ -34,12 +34,12 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('dokumen-mahasiswa.index') }}" class="{{ request()->routeIs('dokumen-mahasiswa.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Dokumen Mahasiswa</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('kebutuhan-inklusif.index') }}" class="{{ request()->routeIs('kebutuhan-inklusif.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Kebutuhan Inklusif</span>
             </a>
           </li>

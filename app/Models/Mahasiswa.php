@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Mahasiswa extends Model
@@ -59,5 +60,21 @@ class Mahasiswa extends Model
     public function orangTua(): HasOne
     {
         return $this->hasOne(OrangTua::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Dokumen Mahasiswa.
+     */
+    public function dokumenMahasiswas(): HasMany
+    {
+        return $this->hasMany(DokumenMahasiswa::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Kebutuhan Inklusif.
+     */
+    public function kebutuhanInklusifs(): HasMany
+    {
+        return $this->hasMany(KebutuhanInklusif::class, 'mahasiswa_id');
     }
 }
