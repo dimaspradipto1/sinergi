@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class MahasiswaRequest extends FormRequest
+class MahasiswaBaruRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,27 +22,30 @@ class MahasiswaRequest extends FormRequest
      */
     public function rules(): array
     {
-        $mahasiswaId = $this->route('mahasiswa');
+        $mabaId = $this->route('mahasiswa_baru');
 
         return [
             'program_studi_id'  => ['required', 'exists:program_studis,id'],
             'tahun_akademik_id' => ['required', 'exists:tahun_akademiks,id'],
-            'jalur_masuk'       => ['required', 'string', 'max:100'],
-            'nim'               => [
+            'no_pendaftaran'    => [
                 'required',
                 'string',
                 'max:50',
-                Rule::unique('mahasiswas', 'nim')->ignore($mahasiswaId),
+                Rule::unique('mahasiswa_barus', 'no_pendaftaran')->ignore($mabaId),
             ],
-            'nama'              => ['required', 'string', 'max:255'],
+            'jalur_pendaftaran' => ['required', 'string', 'max:100'],
+            'gelombang'         => ['nullable', 'string', 'max:50'],
+            'nama_lengkap'      => ['required', 'string', 'max:255'],
             'nik'               => ['nullable', 'string', 'max:30'],
             'jenis_kelamin'     => ['required', 'in:Laki-laki,Perempuan'],
             'tempat_lahir'      => ['nullable', 'string', 'max:100'],
             'tanggal_lahir'     => ['nullable', 'date'],
             'email'             => ['nullable', 'email', 'max:255'],
             'no_hp'             => ['nullable', 'string', 'max:20'],
+            'asal_sekolah'      => ['nullable', 'string', 'max:255'],
             'alamat'            => ['nullable', 'string'],
-            'status_mahasiswa'  => ['required', 'in:Aktif,Cuti,Lulus,Drop Out,Mengundurkan Diri'],
+            'status_kelulusan'  => ['required', 'in:Diterima,Cadangan,Proses Seleksi,Tidak Lulus'],
+            'status_registrasi' => ['required', 'in:Belum Registrasi,Registrasi Ulang,Batal / Mengundurkan Diri'],
             'foto'              => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
         ];
     }
@@ -53,18 +56,16 @@ class MahasiswaRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'program_studi_id.required'  => 'Program studi wajib dipilih.',
-            'program_studi_id.exists'    => 'Program studi yang dipilih tidak valid.',
-            'tahun_akademik_id.required' => 'Tahun akademik wajib dipilih.',
-            'tahun_akademik_id.exists'   => 'Tahun akademik yang dipilih tidak valid.',
-            'jalur_masuk.required'       => 'Jalur masuk wajib dipilih/diisi.',
-            'nim.required'               => 'NIM mahasiswa wajib diisi.',
-            'nim.unique'                 => 'NIM sudah terdaftar untuk mahasiswa lain.',
-            'nama.required'              => 'Nama lengkap mahasiswa wajib diisi.',
+            'program_studi_id.required'  => 'Pilihan program studi wajib diisi.',
+            'program_studi_id.exists'    => 'Program studi tidak valid.',
+            'tahun_akademik_id.required' => 'Tahun akademik / angkatan wajib dipilih.',
+            'tahun_akademik_id.exists'   => 'Tahun akademik tidak valid.',
+            'no_pendaftaran.required'    => 'Nomor pendaftaran wajib diisi.',
+            'no_pendaftaran.unique'      => 'Nomor pendaftaran sudah terdaftar.',
+            'jalur_pendaftaran.required' => 'Jalur pendaftaran wajib dipilih.',
+            'nama_lengkap.required'      => 'Nama lengkap wajib diisi.',
             'jenis_kelamin.required'     => 'Jenis kelamin wajib dipilih.',
-            'jenis_kelamin.in'           => 'Pilihan jenis kelamin tidak valid.',
             'email.email'                => 'Format email tidak valid.',
-            'status_mahasiswa.required'  => 'Status mahasiswa wajib dipilih.',
             'foto.image'                 => 'Berkas foto harus berupa gambar.',
             'foto.mimes'                 => 'Format foto harus berupa JPG, JPEG, PNG, atau WEBP.',
             'foto.max'                   => 'Ukuran foto maksimal 2MB.',

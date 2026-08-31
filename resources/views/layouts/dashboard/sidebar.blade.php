@@ -14,17 +14,17 @@
 
       <!-- 1. Pendataan -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*') ? '' : 'collapsed' }}" data-bs-target="#pendataan-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-people"></i><span>Pendataan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="pendataan-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="pendataan-nav" class="nav-content collapse {{ request()->routeIs('mahasiswa-baru.*', 'mahasiswa.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('mahasiswa-baru.index') }}" class="{{ request()->routeIs('mahasiswa-baru.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Mahasiswa Baru (MABA)</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('mahasiswa.index') }}" class="{{ request()->routeIs('mahasiswa.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Data Mahasiswa</span>
             </a>
           </li>
@@ -228,32 +228,32 @@
 
       <!-- 7. Master Data -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('pengguna.*') ? '' : 'collapsed' }}" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('pengguna.*', 'fakultas.*', 'program-studi.*', 'tahun-akademik.*', 'semester.*') ? '' : 'collapsed' }}" data-bs-target="#master-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-gear"></i><span>Master Data</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="master-nav" class="nav-content collapse {{ request()->routeIs('pengguna.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
+        <ul id="master-nav" class="nav-content collapse {{ request()->routeIs('pengguna.*', 'fakultas.*', 'program-studi.*', 'tahun-akademik.*', 'semester.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
             <a href="{{ route('pengguna.index') }}" class="{{ request()->routeIs('pengguna.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Pengguna</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('fakultas.index') }}" class="{{ request()->routeIs('fakultas.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Fakultas</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('program-studi.index') }}" class="{{ request()->routeIs('program-studi.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Program Studi</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('tahun-akademik.index') }}" class="{{ request()->routeIs('tahun-akademik.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Tahun Akademik</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('semester.index') }}" class="{{ request()->routeIs('semester.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Semester</span>
             </a>
           </li>
