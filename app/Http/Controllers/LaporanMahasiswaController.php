@@ -34,20 +34,20 @@ class LaporanMahasiswaController extends Controller
         }
 
         if ($request->filled('jenis_kelamin')) {
-            $query->where('jenis_kelamin', $request->jenis_kelamin);
+            $query->where('jenis_kelamin', 'like', $request->jenis_kelamin . '%');
         }
 
-        if ($request->filled('status_maba')) {
-            $query->where('status_maba', $request->status_maba);
+        if ($request->filled('status_mahasiswa')) {
+            $query->where('status_mahasiswa', $request->status_mahasiswa);
         }
 
         $mahasiswaList = $query->orderBy('nama', 'asc')->get();
 
         // Rekapitulasi Statistik
         $totalMahasiswa = $mahasiswaList->count();
-        $totalLaki = $mahasiswaList->where('jenis_kelamin', 'L')->count();
-        $totalPerempuan = $mahasiswaList->where('jenis_kelamin', 'P')->count();
-        $totalMaba = $mahasiswaList->where('status_maba', 'Ya')->count();
+        $totalLaki = $mahasiswaList->filter(fn($m) => str_starts_with($m->jenis_kelamin, 'L'))->count();
+        $totalPerempuan = $mahasiswaList->filter(fn($m) => str_starts_with($m->jenis_kelamin, 'P'))->count();
+        $totalInklusif = $mahasiswaList->filter(fn($m) => !is_null($m->kebutuhanInklusif))->count();
 
         return view('pages.laporan.mahasiswa.index', compact(
             'tahunAkademik',
@@ -57,7 +57,7 @@ class LaporanMahasiswaController extends Controller
             'totalMahasiswa',
             'totalLaki',
             'totalPerempuan',
-            'totalMaba'
+            'totalInklusif'
         ));
     }
 }

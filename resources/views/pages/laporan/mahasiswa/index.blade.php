@@ -147,14 +147,14 @@
         <div class="col-xxl-3 col-md-6">
             <div class="card info-card shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">Mahasiswa Baru</h5>
+                    <h5 class="card-title">Kebutuhan Inklusif</h5>
                     <div class="d-flex align-items-center">
                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="color: #ff771d; background: #ffefe6;">
-                            <i class="bi bi-person-plus"></i>
+                            <i class="bi bi-universal-access"></i>
                         </div>
                         <div class="ps-3">
-                            <h6>{{ $totalMaba }}</h6>
-                            <span class="text-muted small pt-2 ps-1">Status MABA</span>
+                            <h6>{{ $totalInklusif }}</h6>
+                            <span class="text-muted small pt-2 ps-1">Data Khusus PLD</span>
                         </div>
                     </div>
                 </div>
