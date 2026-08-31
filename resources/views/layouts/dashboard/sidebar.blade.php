@@ -190,37 +190,37 @@
 
       <!-- 6. Laporan -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('laporan-mahasiswa.*', 'laporan-akademik.*', 'laporan-asesmen.*', 'laporan-alumni.*', 'laporan-tracer-study.*', 'export-data.*') ? '' : 'collapsed' }}" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-file-earmark-bar-graph"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="laporan-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="laporan-nav" class="nav-content collapse {{ request()->routeIs('laporan-mahasiswa.*', 'laporan-akademik.*', 'laporan-asesmen.*', 'laporan-alumni.*', 'laporan-tracer-study.*', 'export-data.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('laporan-mahasiswa.index') }}" class="{{ request()->routeIs('laporan-mahasiswa.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Laporan Mahasiswa</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('laporan-akademik.index') }}" class="{{ request()->routeIs('laporan-akademik.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Laporan Akademik</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('laporan-asesmen.index') }}" class="{{ request()->routeIs('laporan-asesmen.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Laporan Asesmen</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('laporan-alumni.index') }}" class="{{ request()->routeIs('laporan-alumni.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Laporan Alumni</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('laporan-tracer-study.index') }}" class="{{ request()->routeIs('laporan-tracer-study.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Laporan Tracer Study</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('export-data.index') }}" class="{{ request()->routeIs('export-data.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Export Data</span>
             </a>
           </li>

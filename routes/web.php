@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokumenLulusanController;
 use App\Http\Controllers\DokumenMahasiswaController;
+use App\Http\Controllers\ExportDataController;
 use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\HasilAsesmenController;
 use App\Http\Controllers\InstrumenAsesmenController;
@@ -13,6 +14,11 @@ use App\Http\Controllers\KarierAlumniController;
 use App\Http\Controllers\KebutuhanInklusifController;
 use App\Http\Controllers\KelulusanController;
 use App\Http\Controllers\KrsController;
+use App\Http\Controllers\LaporanAkademikController;
+use App\Http\Controllers\LaporanAlumniController;
+use App\Http\Controllers\LaporanAsesmenController;
+use App\Http\Controllers\LaporanMahasiswaController;
+use App\Http\Controllers\LaporanTracerStudyController;
 use App\Http\Controllers\MahasiswaBaruController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
@@ -91,7 +97,16 @@ Route::middleware('auth')->group(function () {
     Route::resource('perusahaan-mitra', PerusahaanController::class);
     Route::get('/monitoring-alumni', [MonitoringAlumniController::class, 'index'])->name('monitoring-alumni.index');
 
-    // 6. Master Data
+    // 6. Laporan & Export
+    Route::get('/laporan-mahasiswa', [LaporanMahasiswaController::class, 'index'])->name('laporan-mahasiswa.index');
+    Route::get('/laporan-akademik', [LaporanAkademikController::class, 'index'])->name('laporan-akademik.index');
+    Route::get('/laporan-asesmen', [LaporanAsesmenController::class, 'index'])->name('laporan-asesmen.index');
+    Route::get('/laporan-alumni', [LaporanAlumniController::class, 'index'])->name('laporan-alumni.index');
+    Route::get('/laporan-tracer-study', [LaporanTracerStudyController::class, 'index'])->name('laporan-tracer-study.index');
+    Route::get('/export-data', [ExportDataController::class, 'index'])->name('export-data.index');
+    Route::get('/export-data/download/{type}', [ExportDataController::class, 'export'])->name('export-data.download');
+
+    // 7. Master Data
     Route::put('/pengguna/{pengguna}/password', [PenggunaController::class, 'updatePassword'])->name('pengguna.password.update');
     Route::resource('pengguna', PenggunaController::class);
     Route::resource('fakultas', FakultasController::class);
