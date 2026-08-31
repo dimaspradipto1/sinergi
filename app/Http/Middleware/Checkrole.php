@@ -18,7 +18,8 @@ class Checkrole
     {
         if (
             Auth::user()->role == 'superadmin' ||
-            Auth::user()->role == 'admin'
+            Auth::user()->role == 'admin' ||
+            Auth::user()->role == 'pimpinan'
         ) {
             return $next($request);
         }

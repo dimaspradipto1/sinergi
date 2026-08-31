@@ -28,9 +28,9 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'),
             ],
             [
-                'name' => 'User Sinergi',
+                'name' => 'Pimpinan Sinergi',
                 'email' => 'user@uis.ac.id',
-                'role' => 'user',
+                'role' => 'pimpinan',
                 'password' => Hash::make('password'),
             ],
         ];
@@ -43,4 +43,3 @@ class UserSeeder extends Seeder
         }
     }
 }
-
