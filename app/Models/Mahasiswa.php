@@ -85,4 +85,12 @@ class Mahasiswa extends Model
     {
         return $this->hasOne(Alumni::class, 'mahasiswa_id');
     }
+
+    /**
+     * Relasi ke Asesmen Mahasiswa.
+     */
+    public function asesmenMahasiswas(): HasMany
+    {
+        return $this->hasMany(AsesmenMahasiswa::class, 'mahasiswa_id');
+    }
 }

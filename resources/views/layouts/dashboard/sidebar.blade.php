@@ -97,32 +97,32 @@
 
       <!-- 3. Asesmen Kompetensi -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#asesmen-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('instrumen-asesmen.*', 'pertanyaan-asesmen.*', 'pelaksanaan-asesmen.*', 'hasil-asesmen.*', 'pemetaan-kompetensi.*') ? '' : 'collapsed' }}" data-bs-target="#asesmen-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-clipboard-check"></i><span>Asesmen Kompetensi</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="asesmen-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="asesmen-nav" class="nav-content collapse {{ request()->routeIs('instrumen-asesmen.*', 'pertanyaan-asesmen.*', 'pelaksanaan-asesmen.*', 'hasil-asesmen.*', 'pemetaan-kompetensi.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('instrumen-asesmen.index') }}" class="{{ request()->routeIs('instrumen-asesmen.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Instrumen Asesmen</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('pertanyaan-asesmen.index') }}" class="{{ request()->routeIs('pertanyaan-asesmen.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Bank Pertanyaan</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('pelaksanaan-asesmen.index') }}" class="{{ request()->routeIs('pelaksanaan-asesmen.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Pelaksanaan Asesmen</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('hasil-asesmen.index') }}" class="{{ request()->routeIs('hasil-asesmen.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Hasil Asesmen</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('pemetaan-kompetensi.index') }}" class="{{ request()->routeIs('pemetaan-kompetensi.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Pemetaan Kompetensi</span>
             </a>
           </li>
