@@ -39,7 +39,7 @@
                             <option value="">-- Semua Instrumen Asesmen --</option>
                             @foreach($instrumenList as $ins)
                                 <option value="{{ $ins->id }}" {{ request('instrumen_asesmen_id') == $ins->id ? 'selected' : '' }}>
-                                    {{ $ins->nama_asesmen }}
+                                    {{ $ins->nama_instrumen }}
                                 </option>
                             @endforeach
                         </select>
@@ -107,7 +107,7 @@
         <div class="col-xxl-4 col-md-6">
             <div class="card info-card customers-card shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">Akomodasi / Kategori Tinggi</h5>
+                    <h5 class="card-title">Kategori Unggul / Mandiri</h5>
                     <div class="d-flex align-items-center">
                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center" style="color: #2eca6a; background: #e0f8e9;">
                             <i class="bi bi-award-fill"></i>
@@ -142,8 +142,9 @@
                                     <th>Program Studi</th>
                                     <th>Instrumen Asesmen</th>
                                     <th width="120" class="text-center">Tanggal</th>
-                                    <th width="100" class="text-center">Skor Total</th>
-                                    <th>Rekomendasi Akomodasi</th>
+                                    <th width="100" class="text-center">Nilai Total</th>
+                                    <th width="140" class="text-center">Kategori</th>
+                                    <th>Catatan Asesor</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -153,16 +154,19 @@
                                         <td class="fw-semibold text-primary">{{ $as->mahasiswa->nim ?? '-' }}</td>
                                         <td class="fw-semibold">{{ $as->mahasiswa->nama ?? '-' }}</td>
                                         <td>{{ $as->mahasiswa->programStudi->program_studi ?? '-' }}</td>
-                                        <td><span class="badge bg-light text-dark border">{{ $as->instrumenAsesmen->nama_asesmen ?? '-' }}</span></td>
-                                        <td class="text-center">{{ $as->tanggal_asesmen ? $as->tanggal_asesmen->format('d/m/Y') : '-' }}</td>
+                                        <td><span class="badge bg-light text-dark border">{{ $as->instrumenAsesmen->nama_instrumen ?? '-' }}</span></td>
+                                        <td class="text-center">{{ $as->tanggal ? $as->tanggal->format('d/m/Y') : '-' }}</td>
                                         <td class="text-center">
-                                            <span class="badge bg-primary fs-6 fw-bold">{{ $as->skor_total }}</span>
+                                            <span class="badge bg-primary fs-6 fw-bold">{{ number_format($as->nilai_total, 1) }}</span>
                                         </td>
-                                        <td class="small">{{ $as->rekomendasi ?: 'Tidak ada rekomendasi khusus.' }}</td>
+                                        <td class="text-center">
+                                            <span class="badge bg-info text-dark">{{ $as->kategori ?: 'Belum Dinilai' }}</span>
+                                        </td>
+                                        <td class="small">{{ $as->catatan_asesor ?: '-' }}</td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="8" class="text-center text-muted py-4">Belum ada data asesmen yang sesuai filter.</td>
+                                        <td colspan="9" class="text-center text-muted py-4">Belum ada data asesmen yang sesuai filter.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

@@ -115,7 +115,7 @@ class ExportDataController extends Controller
                     break;
 
                 case 'asesmen':
-                    fputcsv($file, ['No', 'NIM', 'Nama Mahasiswa', 'Program Studi', 'Instrumen Asesmen', 'Tanggal Asesmen', 'Skor Total', 'Rekomendasi']);
+                    fputcsv($file, ['No', 'NIM', 'Nama Mahasiswa', 'Program Studi', 'Instrumen Asesmen', 'Tanggal Asesmen', 'Nilai Total', 'Kategori', 'Catatan Asesor']);
                     $data = AsesmenMahasiswa::with(['mahasiswa.programStudi', 'instrumenAsesmen'])->get();
                     foreach ($data as $index => $as) {
                         fputcsv($file, [
@@ -123,10 +123,11 @@ class ExportDataController extends Controller
                             $as->mahasiswa->nim ?? '-',
                             $as->mahasiswa->nama ?? '-',
                             $as->mahasiswa->programStudi->program_studi ?? '-',
-                            $as->instrumenAsesmen->nama_asesmen ?? '-',
-                            $as->tanggal_asesmen ? $as->tanggal_asesmen->format('d/m/Y') : '-',
-                            $as->skor_total,
-                            $as->rekomendasi,
+                            $as->instrumenAsesmen->nama_instrumen ?? '-',
+                            $as->tanggal ? $as->tanggal->format('d/m/Y') : '-',
+                            $as->nilai_total,
+                            $as->kategori,
+                            $as->catatan_asesor,
                         ]);
                     }
                     break;

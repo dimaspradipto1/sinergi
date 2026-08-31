@@ -13,7 +13,7 @@ class LaporanAsesmenController extends Controller
      */
     public function index(Request $request)
     {
-        $instrumenList = InstrumenAsesmen::orderBy('nama_asesmen', 'asc')->get();
+        $instrumenList = InstrumenAsesmen::orderBy('nama_instrumen', 'asc')->get();
 
         $query = AsesmenMahasiswa::with(['mahasiswa.programStudi', 'instrumenAsesmen', 'jawabanAsesmens.pertanyaanAsesmen']);
 
@@ -22,19 +22,20 @@ class LaporanAsesmenController extends Controller
         }
 
         if ($request->filled('tanggal_mulai')) {
-            $query->whereDate('tanggal_asesmen', '>=', $request->tanggal_mulai);
+            $query->whereDate('tanggal', '>=', $request->tanggal_mulai);
         }
 
         if ($request->filled('tanggal_selesai')) {
-            $query->whereDate('tanggal_asesmen', '<=', $request->tanggal_selesai);
+            $query->whereDate('tanggal', '<=', $request->tanggal_selesai);
         }
 
-        $asesmenList = $query->orderBy('tanggal_asesmen', 'desc')->get();
+        $asesmenList = $query->orderBy('tanggal', 'desc')->get();
 
         $totalAsesmen = $asesmenList->count();
-        $avgSkor = $totalAsesmen > 0 ? round($asesmenList->avg('skor_total'), 1) : 0;
+        $avgSkor = $totalAsesmen > 0 ? round($asesmenList->avg('nilai_total'), 1) : 0;
         $totalTinggi = $asesmenList->filter(function ($a) {
-            return str_contains(strtolower($a->rekomendasi ?? ''), 'tinggi') || $a->skor_total >= 80;
+            $kat = strtolower($a->kategori ?? '');
+            return str_contains($kat, 'sangat') || str_contains($kat, 'tinggi') || str_contains($kat, 'mahir') || $a->nilai_total >= 80;
         })->count();
 
         return view('pages.laporan.asesmen.index', compact(
