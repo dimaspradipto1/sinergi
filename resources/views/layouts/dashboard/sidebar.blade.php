@@ -52,43 +52,44 @@
       </li><!-- End Pendataan Nav -->
 
       <!-- 2. Akademik & Penilaian -->
+      <!-- 2. Akademik & Penilaian -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#akademik-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('mata-kuliah.*', 'krs.*', 'nilai-mahasiswa.*', 'ip-ipk.*', 'prestasi.*', 'sertifikasi.*', 'portofolio.*') ? '' : 'collapsed' }}" data-bs-target="#akademik-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-bookmark"></i><span>Akademik & Penilaian</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="akademik-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="akademik-nav" class="nav-content collapse {{ request()->routeIs('mata-kuliah.*', 'krs.*', 'nilai-mahasiswa.*', 'ip-ipk.*', 'prestasi.*', 'sertifikasi.*', 'portofolio.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('mata-kuliah.index') }}" class="{{ request()->routeIs('mata-kuliah.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Mata Kuliah</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('krs.index') }}" class="{{ request()->routeIs('krs.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>KRS Mahasiswa</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('nilai-mahasiswa.index') }}" class="{{ request()->routeIs('nilai-mahasiswa.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Nilai Mahasiswa</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('ip-ipk.index') }}" class="{{ request()->routeIs('ip-ipk.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>IP & IPK</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('prestasi.index') }}" class="{{ request()->routeIs('prestasi.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Prestasi</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('sertifikasi.index') }}" class="{{ request()->routeIs('sertifikasi.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Sertifikasi</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('portofolio.index') }}" class="{{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Portofolio</span>
             </a>
           </li>
@@ -131,22 +132,22 @@
 
       <!-- 4. Kelulusan -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#kelulusan-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('data-kelulusan.*', 'wisuda.*', 'dokumen-lulusan.*') ? '' : 'collapsed' }}" data-bs-target="#kelulusan-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-mortarboard"></i><span>Kelulusan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="kelulusan-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="kelulusan-nav" class="nav-content collapse {{ request()->routeIs('data-kelulusan.*', 'wisuda.*', 'dokumen-lulusan.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('data-kelulusan.index') }}" class="{{ request()->routeIs('data-kelulusan.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Data Kelulusan</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('wisuda.index') }}" class="{{ request()->routeIs('wisuda.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Wisuda</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('dokumen-lulusan.index') }}" class="{{ request()->routeIs('dokumen-lulusan.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Dokumen Lulusan</span>
             </a>
           </li>
@@ -155,32 +156,32 @@
 
       <!-- 5. Pelacakan Karir -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#karir-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->routeIs('tracer-study.*', 'status-pekerjaan.*', 'riwayat-karier.*', 'perusahaan-mitra.*', 'monitoring-alumni.*') ? '' : 'collapsed' }}" data-bs-target="#karir-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-briefcase"></i><span>Pelacakan Karir</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="karir-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="karir-nav" class="nav-content collapse {{ request()->routeIs('tracer-study.*', 'status-pekerjaan.*', 'riwayat-karier.*', 'perusahaan-mitra.*', 'monitoring-alumni.*') ? 'show' : '' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{ route('tracer-study.index') }}" class="{{ request()->routeIs('tracer-study.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Tracer Study</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('status-pekerjaan.index') }}" class="{{ request()->routeIs('status-pekerjaan.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Status Pekerjaan</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('riwayat-karier.index') }}" class="{{ request()->routeIs('riwayat-karier.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Riwayat Karier</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('perusahaan-mitra.index') }}" class="{{ request()->routeIs('perusahaan-mitra.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Perusahaan Mitra</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('monitoring-alumni.index') }}" class="{{ request()->routeIs('monitoring-alumni.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Monitoring Alumni</span>
             </a>
           </li>

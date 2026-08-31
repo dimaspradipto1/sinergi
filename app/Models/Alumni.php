@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Alumni extends Model
 {
@@ -28,5 +29,21 @@ class Alumni extends Model
     public function mahasiswa(): BelongsTo
     {
         return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Tracer Study.
+     */
+    public function tracerStudies(): HasMany
+    {
+        return $this->hasMany(TracerStudy::class, 'alumni_id');
+    }
+
+    /**
+     * Relasi ke Riwayat Karier Alumni.
+     */
+    public function karierAlumnis(): HasMany
+    {
+        return $this->hasMany(KarierAlumni::class, 'alumni_id');
     }
 }

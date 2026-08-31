@@ -15,7 +15,7 @@
 
 <section class="section">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
 
             <div class="card shadow-sm">
                 <div class="card-header bg-white py-3">

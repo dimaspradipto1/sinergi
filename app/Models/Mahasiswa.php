@@ -93,4 +93,60 @@ class Mahasiswa extends Model
     {
         return $this->hasMany(AsesmenMahasiswa::class, 'mahasiswa_id');
     }
+
+    /**
+     * Relasi ke KRS.
+     */
+    public function krs(): HasMany
+    {
+        return $this->hasMany(Krs::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Prestasi.
+     */
+    public function prestasis(): HasMany
+    {
+        return $this->hasMany(Prestasi::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Sertifikasi.
+     */
+    public function sertifikasis(): HasMany
+    {
+        return $this->hasMany(Sertifikasi::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Portofolio.
+     */
+    public function portofolios(): HasMany
+    {
+        return $this->hasMany(Portofolio::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Data Kelulusan.
+     */
+    public function kelulusan(): HasOne
+    {
+        return $this->hasOne(Kelulusan::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Wisuda.
+     */
+    public function wisudas(): HasMany
+    {
+        return $this->hasMany(Wisuda::class, 'mahasiswa_id');
+    }
+
+    /**
+     * Relasi ke Dokumen Lulusan.
+     */
+    public function dokumenLulusans(): HasMany
+    {
+        return $this->hasMany(DokumenLulusan::class, 'mahasiswa_id');
+    }
 }
