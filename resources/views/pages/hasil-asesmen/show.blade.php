@@ -53,7 +53,7 @@
                                 </tr>
                                 <tr>
                                     <th class="text-muted">Fakultas</th>
-                                    <td>{{ $asesmen->mahasiswa->programStudi->fakultas->fakultas ?? '-' }}</td>
+                                    <td>{{ $asesmen->mahasiswa->programStudi->fakultas->nama_fakultas ?? '-' }}</td>
                                 </tr>
                             </table>
                         </div>

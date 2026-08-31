@@ -51,7 +51,7 @@
                             <option value="">-- Semua Fakultas --</option>
                             @foreach($fakultas as $fak)
                                 <option value="{{ $fak->id }}" {{ request('fakultas_id') == $fak->id ? 'selected' : '' }}>
-                                    {{ $fak->fakultas }}
+                                    {{ $fak->nama_fakultas }}
                                 </option>
                             @endforeach
                         </select>
@@ -199,7 +199,7 @@
                                             </span>
                                         </td>
                                         <td>{{ $mhs->programStudi->program_studi ?? '-' }}</td>
-                                        <td>{{ $mhs->programStudi->fakultas->fakultas ?? '-' }}</td>
+                                        <td>{{ $mhs->programStudi->fakultas->nama_fakultas ?? '-' }}</td>
                                         <td class="text-center">{{ $mhs->tahunAkademik->tahun_akademik ?? '-' }}</td>
                                         <td>
                                             @if($mhs->kebutuhanInklusif)

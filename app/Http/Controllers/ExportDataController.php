@@ -69,7 +69,7 @@ class ExportDataController extends Controller
                             $mhs->nama,
                             $mhs->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan',
                             $mhs->programStudi->program_studi ?? '-',
-                            $mhs->programStudi->fakultas->fakultas ?? '-',
+                            $mhs->programStudi->fakultas->nama_fakultas ?? '-',
                             $mhs->tahunAkademik->tahun_akademik ?? '-',
                             $mhs->status_maba,
                             $mhs->no_hp,

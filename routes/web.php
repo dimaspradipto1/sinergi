@@ -32,6 +32,7 @@ use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\PertanyaanAsesmenController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramStudiController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\SertifikasiController;
@@ -59,6 +60,11 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Profile & Password
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
     // 1. Pendataan
     Route::resource('mahasiswa-baru', MahasiswaBaruController::class);

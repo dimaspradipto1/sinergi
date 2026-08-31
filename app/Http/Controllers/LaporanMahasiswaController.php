@@ -16,7 +16,7 @@ class LaporanMahasiswaController extends Controller
     public function index(Request $request)
     {
         $tahunAkademik = TahunAkademik::orderBy('tahun_akademik', 'desc')->get();
-        $fakultas = Fakultas::orderBy('fakultas', 'asc')->get();
+        $fakultas = Fakultas::orderBy('nama_fakultas', 'asc')->get();
         $programStudi = ProgramStudi::orderBy('program_studi', 'asc')->get();
 
         $query = Mahasiswa::with(['programStudi.fakultas', 'tahunAkademik', 'kebutuhanInklusif', 'orangTua']);
