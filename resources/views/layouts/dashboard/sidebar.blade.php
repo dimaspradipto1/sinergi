@@ -85,7 +85,7 @@
           </li>
           <li>
             <a href="{{ route('sertifikasi.index') }}" class="{{ request()->routeIs('sertifikasi.*') ? 'active' : '' }}">
-              <i class="bi bi-circle"></i><span>Sertifikasi</span>
+              <i class="bi bi-circle"></i><span>Sertifikat</span>
             </a>
           </li>
           <li>

@@ -540,13 +540,13 @@
                     <span>Standar Aksesibilitas WCAG 2.1 Level AA</span>
                 </div>
 
-                <h1 class="showcase-title">
-                    Sistem Pendataan, Penilaian, Asesmen <br>
-                    <span class="highlight-teal">dan Pelacakan Karir Lulusan Inklusif</span>
+                <h1 class="showcase-title" style="font-size: 20px; font-weight: 700;">
+                    <span class="highlight-teal">SINERGI</span><br>
+                    (Sistem Pendataan, Penilaian, Asesmen dan Pelacakan Karir Lulusan Inklusif)
                 </h1>
 
                 <p class="showcase-desc">
-                    Portal terpadu <strong>SINERGI PLD UIS</strong> dirancang untuk mendukung pendataan komprehensif, evaluasi pembelajaran adaptif, asesmen kebutuhan khusus, serta pelacakan karir lulusan mahasiswa disabilitas secara terintegrasi.
+                    Portal terpadu <strong>SINERGI</strong> dirancang untuk mendukung pendataan komprehensif, evaluasi pembelajaran adaptif, asesmen kebutuhan khusus, serta pelacakan karir lulusan mahasiswa disabilitas secara terintegrasi.
                 </p>
 
                 <!-- 4 Pillars Grid -->

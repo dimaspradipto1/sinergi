@@ -19,8 +19,8 @@
             <div class="card shadow-sm border-0">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center text-center">
 
-                    <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white fw-bold shadow mb-3" style="width: 100px; height: 100px; font-size: 2.2rem;">
-                        {{ strtoupper(substr($user->name, 0, 2)) }}
+                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow mb-3" style="width: 100px; height: 100px; font-size: 2.2rem; background: linear-gradient(135deg, #4154f1 0%, #2a3eb1 100%); letter-spacing: 1px;">
+                        {{ $user->initials }}
                     </div>
 
                     <h4 class="fw-bold text-dark mb-1">{{ $user->name }}</h4>

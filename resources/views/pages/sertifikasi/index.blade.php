@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Sertifikasi Mahasiswa</h1>
+    <h1>Sertifikat Mahasiswa</h1>
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item">Akademik & Penilaian</li>
-            <li class="breadcrumb-item active">Sertifikasi</li>
+            <li class="breadcrumb-item active">Sertifikat</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -20,12 +20,12 @@
                 <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
                     <div>
                         <h5 class="card-title mb-0 p-0 fs-6 fw-bold">
-                            <i class="bi bi-patch-check me-2 text-primary"></i>Daftar Sertifikasi Mahasiswa
+                            <i class="bi bi-patch-check me-2 text-primary"></i>Daftar Sertifikat Mahasiswa
                         </h5>
                         <small class="text-muted">Data sertifikat keahlian, kompetensi, dan pelatihan mahasiswa</small>
                     </div>
                     <a href="{{ route('sertifikasi.create') }}" class="btn btn-primary btn-sm">
-                        <i class="bi bi-plus-lg me-1"></i> Tambah Sertifikasi
+                        <i class="bi bi-plus-lg me-1"></i> Tambah Sertifikat
                     </a>
                 </div>
 

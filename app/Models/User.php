@@ -47,4 +47,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Dapatkan inisial nama pengguna.
+     */
+    public function getInitialsAttribute(): string
+    {
+        $name = trim($this->name ?? '');
+        if (empty($name)) {
+            return 'U';
+        }
+
+        $words = preg_split('/\s+/', $name);
+        if (count($words) >= 2) {
+            $first = mb_substr($words[0], 0, 1);
+            $last = mb_substr(end($words), 0, 1);
+            return mb_strtoupper($first . $last);
+        }
+
+        return mb_strtoupper(mb_substr($name, 0, 2));
+    }
 }

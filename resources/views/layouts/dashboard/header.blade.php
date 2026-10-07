@@ -15,7 +15,9 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+            <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow-sm" style="width: 36px; height: 36px; font-size: 0.85rem; background: linear-gradient(135deg, #4154f1 0%, #2a3eb1 100%); letter-spacing: 0.5px; flex-shrink: 0;">
+              {{ Auth::user()->initials ?? 'U' }}
+            </div>
             <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name ?? 'User' }}</span>
           </a><!-- End Profile Image Icon -->
 
