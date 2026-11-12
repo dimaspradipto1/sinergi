@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BackupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DokumenLulusanController;
 use App\Http\Controllers\DokumenMahasiswaController;
@@ -119,5 +120,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('program-studi', ProgramStudiController::class);
     Route::resource('tahun-akademik', TahunAkademikController::class);
     Route::resource('semester', SemesterController::class);
+
+    // 8. Backup Database & Storage (Pengaturan Sistem)
+    Route::prefix('backup')->name('backup.')->group(function () {
+        Route::get('/', [BackupController::class, 'index'])->name('index');
+        Route::get('/database/download', [BackupController::class, 'downloadDatabase'])->name('database.download');
+        Route::post('/database/restore', [BackupController::class, 'restoreDatabase'])->name('database.restore');
+        Route::get('/storage/download', [BackupController::class, 'downloadStorage'])->name('storage.download');
+        Route::post('/storage/restore', [BackupController::class, 'restoreStorage'])->name('storage.restore');
+    });
 });
 

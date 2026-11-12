@@ -50,6 +50,10 @@
 - Master Fakultas, Program Studi, Tahun Akademik, dan Semester.
 - Manajemen Pengguna dan Pembaruan Profil Mandiri.
 
+### 8. 🛡️ Backup Database & Storage (Pengaturan Sistem)
+- **Ekspor & Impor Database**: Unduh struktur dan seluruh data database ke berkas `.sql`, serta pemulihan (restore) database instan melalui upload berkas backup.
+- **Backup & Impor Storage Public**: Pengarsipan otomatis seluruh dokumen lampiran dan berkas publik pada `storage/app/public` ke format `.zip`, serta fitur pemulihan storage.
+
 ---
 
 ## 🛠️ Kebutuhan Sistem (System Requirements)

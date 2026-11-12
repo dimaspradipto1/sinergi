@@ -259,12 +259,21 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('backup.index') }}" class="{{ request()->routeIs('backup.*') ? 'active' : '' }}">
               <i class="bi bi-circle"></i><span>Pengaturan Sistem</span>
             </a>
           </li>
         </ul>
       </li><!-- End Master Data Nav -->
+
+      <!-- 8. Menu Backup -->
+      <li class="nav-heading">Pengaturan & Pemeliharaan</li>
+
+      <li class="nav-item">
+        <a class="nav-link {{ request()->routeIs('backup.*') ? '' : 'collapsed' }}" href="{{ route('backup.index') }}">
+          <i class="bi bi-database-down"></i><span>Backup Database & Storage</span>
+        </a>
+      </li>
 
     </ul>
 

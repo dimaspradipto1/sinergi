@@ -104,6 +104,8 @@ class SystemAuditTest extends TestCase
             ['semester.create'],
             // Profil
             ['profile.index'],
+            // Backup
+            ['backup.index'],
         ];
     }
 }
