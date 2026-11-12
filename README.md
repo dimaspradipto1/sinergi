@@ -176,4 +176,4 @@ php artisan test
 
 ## 📄 Lisensi
 
-Proyek ini berada di bawah naungan lisensi [MIT](LICENSE).
+Proyek ini berada di bawah naungan lisensi [UIS](LICENSE).
