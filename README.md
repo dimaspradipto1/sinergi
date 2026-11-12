@@ -1,59 +1,179 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SINERGI PLD - Pusat Layanan Disabilitas UIS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel Version](https://img.shields.io/badge/Laravel-13.x-red.svg?style=flat-square&logo=laravel)](https://laravel.com)
+[![PHP Version](https://img.shields.io/badge/PHP-8.4-blue.svg?style=flat-square&logo=php)](https://php.net)
+[![Vite](https://img.shields.io/badge/Vite-7.x-purple.svg?style=flat-square&logo=vite)](https://vitejs.dev)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
-## About Laravel
+**SINERGI PLD** (Sistem Informasi Layanan Disabilitas) adalah aplikasi berbasis web yang dibangun untuk mendukung operasional Pusat Layanan Disabilitas Universitas (UIS). Sistem ini memfasilitasi pendataan mahasiswa inklusif, pemantauan kebutuhan akomodasi khusus, riwayat akademik, asesmen kompetensi, proses kelulusan, hingga tracer study dan pemantauan karier alumni.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fitur & Modul Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. 📋 Pendataan Mahasiswa & Inklusif
+- **Mahasiswa Baru**: Pendaftaran awal dan verifikasi calon mahasiswa.
+- **Data Mahasiswa**: Manajemen profil lengkap mahasiswa aktif.
+- **Data Orang Tua / Wali**: Informasi kontak darurat dan latar belakang wali.
+- **Dokumen Mahasiswa**: Manajemen berkas digital (surat keterangan, identitas, rekam medis/asesmen pendukung).
+- **Kebutuhan Inklusif**: Identifikasi ragam disabilitas, kebutuhan aksesibilitas khusus, dan fasilitas pendukung perkuliahan.
+- **Data Alumni**: Registrasi dan arsip lulusan.
 
-## Learning Laravel
+### 2. 🎓 Akademik & Penilaian
+- **Mata Kuliah & KRS**: Manajemen kurikulum dan kartu rencana studi per semester.
+- **Nilai Mahasiswa & IP/IPK**: Rekapitulasi nilai angka/huruf serta kalkulasi IP Semester dan IP Kumulatif otomatis.
+- **Prestasi & Portofolio**: Pencatatan kejuaraan akademik/non-akademik serta karya mahasiswa.
+- **Sertifikasi**: Pendataan bukti kelulusan pelatihan atau keahlian profesi mahasiswa.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 3. 🧠 Asesmen Kompetensi
+- **Instrumen & Pertanyaan**: Penyusunan kuesioner dan indikator penilaian kompetensi/kemampuan.
+- **Pelaksanaan Asesmen**: Penjadwalan serta pengisian lembar asesmen secara real-time.
+- **Hasil & Pemetaan Kompetensi**: Evaluasi performa dan grafik pemetaan potensi mahasiswa inklusif.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. 📜 Kelulusan & Wisuda
+- **Data Kelulusan**: Verifikasi berkas yudisium dan status kelulusan.
+- **Manajemen Wisuda**: Registrasi periode wisuda dan penetapan toga/undangan.
+- **Dokumen Lulusan**: Pengelolaan Ijazah, Transkrip Akademik, dan SKPI (Surat Keterangan Pendamping Ijazah).
 
-## Laravel Sponsors
+### 5. 💼 Pelacakan Karir & Hubungan Alumni
+- **Tracer Study**: Kuesioner pelacakan keselarasan pendidikan dengan dunia kerja.
+- **Status Pekerjaan & Riwayat Karier**: Pemantauan transisi alumni ke dunia industri/wirausaha.
+- **Perusahaan Mitra**: Kolaborasi dengan mitra industri inklusif.
+- **Monitoring Alumni**: Pantauan berkelanjutan terhadap keberdayaan lulusan.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 6. 📊 Laporan & Ekspor Data
+- Rekapitulasi laporan komprehensif untuk Mahasiswa, Akademik, Asesmen, Alumni, dan Tracer Study.
+- Ekspor data ke format Spreadsheet (Excel) atau cetak dokumen dengan integrasi **Yajra DataTables**.
 
-### Premium Partners
+### 7. ⚙️ Master Data & Akses Pengguna
+- **Role-based Access Control (RBAC)**: Hak akses berjenjang (`superadmin`, `admin`, `pimpinan`).
+- Master Fakultas, Program Studi, Tahun Akademik, dan Semester.
+- Manajemen Pengguna dan Pembaruan Profil Mandiri.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Kebutuhan Sistem (System Requirements)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **PHP**: `^8.4` (Ekstensi: `pdo_mysql`, `mbstring`, `openssl`, `curl`, `gd`, `zip`, `intl`, `fileinfo`)
+- **Web Server**: Apache / Nginx (Laragon / XAMPP direkomendasikan untuk Windows)
+- **Database Server**: MySQL `^8.0` atau MariaDB `^10.4`
+- **Composer**: `^2.2`
+- **Node.js & NPM**: Node.js `^18.x` / `^20.x` & NPM `^9.x`
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 💻 Panduan Instalasi & Menjalankan Proyek
 
-## Security Vulnerabilities
+### 1. Klon Repositori
+```bash
+git clone <url-repository> sinergi
+cd sinergi
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Atur Versi PHP ke PHP 8.4
+Pastikan terminal atau environment server Anda menggunakan **PHP 8.4**.
+- **Di Laragon**: Klik kanan pada Laragon tray menu > **PHP** > **Version** > pilih `php-8.4.x`.
+- **Periksa versi**:
+  ```bash
+  php -v
+  ```
 
-## License
+### 3. Install Dependensi PHP (Composer)
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Konfigurasi Lingkungan (`.env`)
+Salin file `.env.example` ke `.env`:
+```bash
+copy .env.example .env
+```
+Buka file `.env` dan sesuaikan koneksi database:
+```env
+APP_NAME="SINERGI PLD"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sinergi
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 5. Generate Application Key
+```bash
+php artisan key:generate
+```
+
+### 6. Migrasi Database & Seeder
+Buat database bernama `sinergi` di MySQL, lalu jalankan:
+```bash
+php artisan migrate --seed
+```
+
+### 7. Install & Build Aset Frontend
+```bash
+npm install
+npm run build
+```
+*(Untuk mode pengembangan frontend aktif, jalankan `npm run dev`)*
+
+### 8. Jalankan Server Aplikasi
+Jalankan development server Laravel:
+```bash
+php artisan serve
+```
+Akses aplikasi melalui browser: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
+
+## 🔐 Akun Default (Hasil Seeder)
+
+Setelah menjalankan `php artisan migrate --seed`, akun bawaan berikut siap digunakan:
+
+| Role | Email | Password | Hak Akses |
+| :--- | :--- | :--- | :--- |
+| **Super Admin** | `superadmin@uis.ac.id` | `password` | Akses penuh ke semua modul, master data, dan manajemen pengguna |
+| **Admin Unit** | `admin@uis.ac.id` | `password` | Manajemen pendataan, akademik, asesmen, dan kelulusan |
+| **Pimpinan** | `user@uis.ac.id` | `password` | Pemantauan dashboard, monitoring alumni, dan laporan eksekutif |
+
+---
+
+## 🧪 Menjalankan Pengujian (Testing)
+
+Proyek ini telah dikonfigurasi dengan **PHPUnit 11/12** yang kompatibel dengan PHP 8.4. Untuk menjalankan automated tests:
+
+```bash
+php artisan test
+```
+
+---
+
+## 📁 Struktur Direktori Penting
+
+```text
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/   # Logika bisnis seluruh modul fitur
+│   │   └── Middleware/    # Penanganan autentikasi & Checkrole
+│   └── Models/            # Model Eloquent ORM
+├── database/
+│   ├── migrations/        # Skema tabel database
+│   └── seeders/           # Data awal pengguna, fakultas, prodi, dll.
+├── resources/
+│   ├── views/             # Template Blade tampilan sistem
+│   └── css/               # Konfigurasi Tailwind & asset styling
+├── routes/
+│   └── web.php            # Definisi route sistem informasi
+└── composer.json          # Dependensi Laravel 13 & PHP 8.4
+```
+
+---
+
+## 📄 Lisensi
+
+Proyek ini berada di bawah naungan lisensi [MIT](LICENSE).

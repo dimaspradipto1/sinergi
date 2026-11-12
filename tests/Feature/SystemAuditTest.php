@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class SystemAuditTest extends TestCase
@@ -17,9 +18,8 @@ class SystemAuditTest extends TestCase
 
     /**
      * Test all main index and create routes.
-     *
-     * @dataProvider routeProvider
      */
+    #[DataProvider('routeProvider')]
     public function test_route_accessible(string $routeName): void
     {
         $response = $this->actingAs($this->user)->get(route($routeName));
